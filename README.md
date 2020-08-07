@@ -21,3 +21,20 @@ Opcionalmente, vou deixar aqui um [script](https://www.thomasmaurer.ch/2019/07/h
 ``` powershell
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
+
+## POSH-GIT
+O [posh-git](https://github.com/dahlbyk/posh-git) é um módulo do PowerShell que integra o Git ao Powershell provendo informações de status e contexto do Git que pode ser exibido diretamente no prompt de comando. Além de disponibilizar autocomplete para os comandos Git, nomes de branch, e muito mais.  
+Para instalar o módulo execute o seguinte comando:
+``` powershell
+Install-Module posh-git -Scope CurrentUser
+```
+Pode ser necessário autorizar pacotes vindos da *Galeria do Powershell*. Responda sim para que a instalação prossiga.  
+Se voce receber um erro de *Install-Module* sobre o NuGet precisando interagir com *Repositório NuGet*, execute os comandos a seguir para inicializar o provedor de Nuget:
+``` powershell
+Install-PackageProvider NuGet -Force
+Import-PackageProvider NuGet -Force
+```
+Depois de instalado, você poderá sempre atualizar o módulo através do comando: 
+``` powershell
+Update-Module posh-git
+``` 
