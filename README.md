@@ -76,3 +76,11 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ``` 
 Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado.
+
+## Fonte
+Os temas utilizados podem precisar de uma fonte que tenha suporte a *glyphos* e *ligaduras*. Uma boa sugestão é a [Cascadia Code](https://github.com/microsoft/cascadia-code) que é opensource e tem o suporte necessário à *Powerline*.  
+Basta acessar a área de release do repositório e baixar a versão *Cascadia Code PL*. Adicionalmente estou disponibilizando [aqui](./fonts/CascadiaCodePL.ttf) a última versão que usei. Após baixar, clique na mesma com o botão direito e selecione *instalar*.  
+Na sequencia, abra as configurações do windows terminal com `ctrl`+`,` e adicione a seguinte tag ao perfil desejado:
+``` json
+   "fontFace":  "Cascadia Code PL"
+```
