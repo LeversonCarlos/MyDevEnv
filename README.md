@@ -53,10 +53,26 @@ Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -Skip
 ``` 
 
 ## Oh-My-Posh
-Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever a sua prória definição para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversas dessas definições (temas) já prontas para uso. 
+Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever o seu prório *tema* para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversos desses temas, já prontos para uso. 
 
 ### Instalação
 Instalaremos o módulo com o comando:
 ``` powershell
 Install-Module oh-my-posh -Scope CurrentUser
 ``` 
+
+## Profile
+Sempre que abrir uma sessão do PowerShell, será preciso *ativar* os módulos que deseja usar, a saber o *posh-git* e/ou *oh-my-posh*. Para fazer essa ativação automaticamente, vamos editar o arquivo do seu perfil do Powershell e preencher com os comandos que desejamos executar sempre que iniciarmos uma sessão. 
+
+### Editando o Perfil
+Vamos abrir o arquivo do perfil com o comando:
+``` powershell
+code $PROFILE
+``` 
+E então, simplesmente adicione as seguintes linhas:
+``` powershell
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
+``` 
+Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado.
