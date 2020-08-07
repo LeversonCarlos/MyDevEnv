@@ -1,18 +1,19 @@
-# Meu Powershell
+# Powershell Settings
+Apenas um local para eu me lembrar como reconfigurar meu powershell sempre que preciso
 
 
 ## Windows Terminal
 Primeiro vamos falar do Windows Terminal, que é uma especie de IDE agregadora de terminais. Com ele é possível abrir múltiplas abas de terminais distintos como o *Command Prompt* e o próprio *Powershell*, além dos ambientes linux com o *WSL*. Instale o Windows Terminal através desse [link](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) da Windows Store.  
 
 ### Background
-Abra as settings do windows terminal com `ctrl`+`,`. Adicione as seguintes tags ao perfil desejado:
+Pra definir uma imagem, com transparência, como fundo da tela, abra as configurações do windows terminal com `ctrl`+`,` e adicione as seguintes tags ao perfil desejado:
 ```json 
    "backgroundImage": "ms-appdata:///roaming/Matrix1920.gif",
    "backgroundImageOpacity": 0.15,
    "backgroundImageStretchMode": "uniformToFill",
 ```
-A imagem a ser usada para o background precisa ser disponibilizada dentro do sandbox em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/`.  
-Copie a imagem disponibiliza [nesse repositório](./images/Matrix1920.gif), ou a sua imagem de preferência, para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
+A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/...`.  
+Copie a imagem disponibiliza [nesse repositório](./images/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
 ## Powershell Core
@@ -21,9 +22,11 @@ Opcionalmente, vou deixar aqui um [script](https://www.thomasmaurer.ch/2019/07/h
 ``` powershell
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
+O mesmo script poderá ser executado posteriormente para baixar as atualizações.
 
-## POSH-GIT
-O [posh-git](https://github.com/dahlbyk/posh-git) é um módulo do PowerShell que integra o Git ao Powershell provendo informações de status e contexto do Git que pode ser exibido diretamente no prompt de comando. Além de disponibilizar autocomplete para os comandos Git, nomes de branch, e muito mais.  
+
+## Posh-Git
+O [posh-git](https://github.com/dahlbyk/posh-git) é um módulo do PowerShell que integra o *Git* ao Powershell provendo informações de status e contexto do Git que pode ser exibido diretamente no prompt de comando. Além de disponibilizar autocomplete para os comandos Git, nomes de branch, e muito mais.  
 
 ### Instalação 
 Para instalar o módulo execute o seguinte comando:
@@ -47,4 +50,13 @@ Update-Module posh-git
 Se você estiver utilizando o Powershell Core, será preciso instalar o módulo [PSReadline](https://docs.microsoft.com/en-us/powershell/module/psreadline/?view=powershell-6&WT.mc_id=-blog-scottha) para poder customizar o ambiente do prompt de commando no Powershell. Isso pode ser feito através do comando:
 ``` powershell
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+``` 
+
+## Oh-My-Posh
+Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever a sua prória definição para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversas dessas definições (temas) já prontas para uso. 
+
+### Instalação
+Instalaremos o módulo com o comando:
+``` powershell
+Install-Module oh-my-posh -Scope CurrentUser
 ``` 
