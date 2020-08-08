@@ -64,7 +64,7 @@ Install-Module oh-my-posh -Scope CurrentUser
 ## Profile
 Sempre que abrir uma sessão do PowerShell, será preciso *ativar* os módulos que deseja usar, a saber o *posh-git* e/ou *oh-my-posh*. Para fazer essa ativação automaticamente, vamos editar o arquivo do seu perfil do Powershell e preencher com os comandos que desejamos executar sempre que iniciarmos uma sessão. 
 
-### Editando o Perfil
+### Editar o Perfil
 Vamos abrir o arquivo do perfil com o comando:
 ``` powershell
 code $PROFILE
@@ -75,7 +75,26 @@ Import-Module posh-git
 Import-Module oh-my-posh
 Set-Theme Paradox
 ``` 
-Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado.
+Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. Os temas disponíveis podem ser consultados [aqui](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
+
+### Ajustar o Encoding
+Quando começar a executar comandos git e visualizar logs de commits, possivelmente encontrará comentários utilizndo acentuações. Para que o terminal os exiba corretamente, vamos editar novamente o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
+``` powershell
+$env:LC_ALL='C.UTF-8'
+``` 
+
+### Ocultar o usuário
+Por padrão o usuário corrente será exibido como parte do prompt de comando. Para ocultá-lo precisamos preencher a variável que indica quem é o usuário padrão. Os temas verificam se o usuário corrente for o definido nessa variável e em caso afirmativo não o exibe. Vamos editar mais uma vez o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
+``` powershell
+$DefaultUser = '{substitua com o seu nome de usuário}'
+``` 
+
+### Definir mensagem
+Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
+``` powershell
+Clear-Host
+Write-Host "Olá... foco no código"
+``` 
 
 ## Fonte
 Os temas utilizados podem precisar de uma fonte que tenha suporte a *glyphos* e *ligaduras*. Uma boa sugestão é a [Cascadia Code](https://github.com/microsoft/cascadia-code) que é opensource e tem o suporte necessário à *Powerline*.  
