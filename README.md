@@ -8,14 +8,16 @@ Apenas um local para eu me lembrar como reconfigurar meu powershell sempre que p
 Primeiro vamos falar do Windows Terminal, que é uma especie de IDE agregadora de terminais. Com ele é possível abrir múltiplas abas de terminais distintos como o *Command Prompt* e o próprio *Powershell*, além dos ambientes linux com o *WSL*. Instale o Windows Terminal através desse [link](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) da Windows Store.  
 
 ### Background
-Pra definir uma imagem, com transparência, como fundo da tela, abra as configurações do windows terminal com `ctrl`+`,` e adicione as seguintes tags ao perfil desejado:
+Pra definir uma imagem, com transparência, como fundo da tela, abra as configurações do windows terminal com `ctrl`+`,` e adicione as seguintes tags ao perfil desejado: 
 ```json 
    "backgroundImage": "ms-appdata:///roaming/Matrix1920.gif",
    "backgroundImageOpacity": 0.15,
    "backgroundImageStretchMode": "uniformToFill",
 ```
-A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/...`.  
-Copie a imagem disponibiliza [nesse repositório](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
+
+<img src="./backgrounds/Matrix1920.gif" title="Windows Terminal" width="150" align="right" />  
+
+A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/`.  Copie a imagem disponibiliza [nesse repositório](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
 ## Powershell Core
@@ -77,7 +79,7 @@ Import-Module posh-git
 Import-Module oh-my-posh
 Set-Theme Paradox
 ``` 
-Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. Os temas disponíveis podem ser consultados [aqui](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
+Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. 
 
 ### Ajustar o Encoding
 Quando começar a executar comandos git e visualizar logs de commits, possivelmente encontrará comentários utilizndo acentuações. Para que o terminal os exiba corretamente, vamos editar novamente o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
@@ -105,6 +107,50 @@ Na sequencia, abra as configurações do windows terminal com `ctrl`+`,` e adici
 ``` json
    "fontFace":  "Cascadia Code PL"
 ```
+
+## Temas disponibilizados
+Os temas disponíveis podem ser consultados [aqui](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
+
+#### Agnoster
+![Agnoster Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/agnoster.png)
+
+#### Paradox
+![Paradox Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/paradox.png)
+
+#### Sorin
+![Sorin Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/sorin.png)
+
+#### Darkblood
+![Darkblood Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/darkblood.png)
+
+#### Avit
+![Avit Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/avit.png)
+
+#### Honukai
+![Honukai Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/honukai.png)
+
+#### Fish
+![Fish Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/fish.png)
+
+#### Robbyrussell
+![Robbyrussell Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/robbyrussel.png)
+
+#### Pararussel
+![Pararussel Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/pararussel.png)
+
+#### Material
+![Material Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/material.png)
+![Material Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/material2.png)
+
+#### Star
+![Star Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/star.png)
+
+#### Zash
+![Star Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/zash.png)
+
+#### Lambda
+![Lambda Theme](https://github.com/JanDeDobbeleer/oh-my-posh/raw/master/img/lambda.png)
+
 
 ## Tema Customizado
 Os temas disponibilizados pelo módulo *oh-my-posh* nada mais são que um arquivo de script com instruções e comandos dispobilizados pelo módulo *posh-git*. Partindo como exemplo do tema [Honukai](https://github.com/JanDeDobbeleer/oh-my-posh/blob/master/Themes/Honukai.psm1) e seguindo a [documentação](https://github.com/dahlbyk/posh-git#git-status-summary-information), fiz algumas adequações para compor um tema que mais me agradasse e o estou disponibilizando [aqui](./themes/Elesse.psm1).  
