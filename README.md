@@ -3,6 +3,8 @@ Apenas um local para eu me lembrar como reconfigurar meu powershell sempre que p
 
 
 ## Windows Terminal
+<img src="./images/windows-terminal.png" title="Windows Terminal" width="280" align="right" /> 
+
 Primeiro vamos falar do Windows Terminal, que é uma especie de IDE agregadora de terminais. Com ele é possível abrir múltiplas abas de terminais distintos como o *Command Prompt* e o próprio *Powershell*, além dos ambientes linux com o *WSL*. Instale o Windows Terminal através desse [link](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) da Windows Store.  
 
 ### Background
@@ -13,7 +15,7 @@ Pra definir uma imagem, com transparência, como fundo da tela, abra as configur
    "backgroundImageStretchMode": "uniformToFill",
 ```
 A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/...`.  
-Copie a imagem disponibiliza [nesse repositório](./images/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
+Copie a imagem disponibiliza [nesse repositório](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
 ## Powershell Core
