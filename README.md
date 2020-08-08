@@ -103,3 +103,6 @@ Na sequencia, abra as configurações do windows terminal com `ctrl`+`,` e adici
 ``` json
    "fontFace":  "Cascadia Code PL"
 ```
+
+## Tema Customizado
+Os temas disponibilizados pelo módulo *oh-my-posh* nada mais são que um arquivo de script com instruções e comandos dispobilizados pelo módulo *posh-git*. Partindo como exemplo do tema [Honukai](https://github.com/JanDeDobbeleer/oh-my-posh/blob/master/Themes/Honukai.psm1) e seguindo a [documentação](https://github.com/dahlbyk/posh-git#git-status-summary-information), fiz algumas adequações para compor um tema que mais me agradasse e o estou disponibilizando [aqui](./themes/Elesse.psm1).
