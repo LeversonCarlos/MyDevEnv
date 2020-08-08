@@ -1,9 +1,10 @@
 # Powershell Settings
-Apenas um local para eu me lembrar como reconfigurar meu powershell sempre que preciso
+Apenas um local para eu me lembrar como reconfigurar meu powershell do jeito que gosto sempre que preciso. 
 
 
 ## Windows Terminal
-<img src="./images/windows-terminal.png" title="Windows Terminal" width="280" align="right" /> 
+
+<img src="./images/windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
 
 Primeiro vamos falar do Windows Terminal, que é uma especie de IDE agregadora de terminais. Com ele é possível abrir múltiplas abas de terminais distintos como o *Command Prompt* e o próprio *Powershell*, além dos ambientes linux com o *WSL*. Instale o Windows Terminal através desse [link](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) da Windows Store.  
 
@@ -15,9 +16,8 @@ Pra definir uma imagem, com transparência, como fundo da tela, abra as configur
    "backgroundImageStretchMode": "uniformToFill",
 ```
 
-<img src="./backgrounds/Matrix1920.gif" title="Windows Terminal" width="150" align="right" />  
-
-A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/`.  Copie a imagem disponibiliza [nesse repositório](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
+A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox* em que o windows terminal tem acesso e é descrita por esse prefixo `ms-appdata:///roaming/`.  
+Copie a imagem disponibilizada [aqui](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
 ## Powershell Core
@@ -26,7 +26,7 @@ Opcionalmente, vou deixar aqui um [script](https://www.thomasmaurer.ch/2019/07/h
 ``` powershell
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
-O mesmo script poderá ser executado posteriormente para baixar as atualizações.
+> O mesmo script poderá ser executado posteriormente para baixar as atualizações.
 
 
 ## Posh-Git
@@ -82,7 +82,7 @@ Set-Theme Paradox
 Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. 
 
 ### Ajustar o Encoding
-Quando começar a executar comandos git e visualizar logs de commits, possivelmente encontrará comentários utilizndo acentuações. Para que o terminal os exiba corretamente, vamos editar novamente o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
+Quando começar a executar comandos git e visualizar logs de commits, possivelmente encontrará comentários utilizando acentuações. Para que o terminal os exiba corretamente, vamos editar novamente o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
 ``` powershell
 $env:LC_ALL='C.UTF-8'
 ``` 
@@ -94,7 +94,7 @@ $DefaultUser = '{substitua com o seu nome de usuário}'
 ``` 
 
 ### Definir mensagem
-Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
+Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
 ``` powershell
 Clear-Host
 Write-Host "Olá... foco no código"
