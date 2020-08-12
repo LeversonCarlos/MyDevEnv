@@ -162,5 +162,31 @@ Set-Theme C:\Sources\Personal\powershell-settings\themes\Elesse.psm1
 ```
 Opcionalmente, seria possível disponibilizar esse tema na pasta de temas do *oh-my-posh* que normalmente se encontra em: `C:\Users\{seu nome de usuario}\Documents\PowerShell\Modules\oh-my-posh`
 
+
+## Aliases para Comandos Git
+Podemos criar aliases para comandos através do comando `New-Alias -Name {alias desejado} -Value {commando ou função a ser executada}`. Com isso em mente, elaborei um script que cria funções e aliases para alguns dos principais comandos *Git* que mais uso, e da forma como costumo usar.  
+
+### Ativação
+Para executar esse script, editar o perfil com: `code $PROFILE` e mencionar o caminho completo onde o gravou, como:
+``` powershell
+."C:\Sources\Personal\powershell-settings\scripts\git-alias.ps1"
+```
+
+### Comandos tratados
+Segue lista de aliases e comandos tratados:  
+| | comandos básicos |
+|---|---|
+| st | git status *-sb* |
+| log | git log *--graph --oneline --max-count=20* |
+| dif | git diff *--word-diff* |
+| branch | git branch `args` |
+| co | git checkout `args` |
+| add | git add *--interactive* |
+| ci | git commit -m "`args`" |
+| feature | git checkout -b `currentBranch.args` `currentBranch` |
+| pull | git pull origin `currentBranch` |
+| push | git push origin `currentBranch` |
+
+
 ## Conclusão
 Seu terminal não precisa ser boring.
