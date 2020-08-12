@@ -13,30 +13,27 @@ New-Alias -Name branch -Value Invoke-GitBranch -Force -Option AllScope
 function Invoke-GitCheckout { & git checkout $args }
 New-Alias -Name co -Value Invoke-GitCheckout -Force -Option AllScope
 
-function Invoke-GitAdd { & git add $args }
+function Invoke-GitAdd { & git add --interactive $args }
 New-Alias -Name add -Value Invoke-GitAdd -Force -Option AllScope
 
 function Invoke-GitCommit { & git commit -m $args[0] }
 New-Alias -Name ci -Value Invoke-GitCommit -Force -Option AllScope
 
-function Invoke-GitPush { & git push $args }
-New-Alias -Name push -Value Invoke-GitPush -Force -Option AllScope
-
 function Invoke-GitPull { & git pull $args }
 New-Alias -Name pull -Value Invoke-GitPull -Force -Option AllScope
 
-function Invoke-GitStart { 
+function Invoke-GitFeature { 
    $currentBranch = $(git rev-parse --abbrev-ref HEAD)
    $newBranch = "$currentBranch.$args"
    git checkout -b $newBranch $currentBranch
 }
-New-Alias -Name start -Value Invoke-GitStart -Force -Option AllScope
+New-Alias -Name feature -Value Invoke-GitFeature -Force -Option AllScope
 
-function Invoke-GitFinish { 
+function Invoke-GitPush { 
    $currentBranch = $(git rev-parse --abbrev-ref HEAD)
    git push origin $currentBranch
 }
-New-Alias -Name finish -Value Invoke-GitFinish -Force -Option AllScope
+New-Alias -Name push -Value Invoke-GitPush -Force -Option AllScope
 
 # Add-Alias rs 'git reset'
 # Add-Alias rb 'git rebase'
