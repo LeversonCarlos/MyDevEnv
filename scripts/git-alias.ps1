@@ -19,7 +19,10 @@ New-Alias -Name add -Value Invoke-GitAdd -Force -Option AllScope
 function Invoke-GitCommit { & git commit -m "$args" }
 New-Alias -Name ci -Value Invoke-GitCommit -Force -Option AllScope
 
-function Invoke-GitPull { & git pull $args }
+function Invoke-GitPull { 
+   $currentBranch = $(git rev-parse --abbrev-ref HEAD)
+   git pull origin $currentBranch   
+}
 New-Alias -Name pull -Value Invoke-GitPull -Force -Option AllScope
 
 function Invoke-GitFeature { 
