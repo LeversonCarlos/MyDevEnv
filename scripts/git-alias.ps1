@@ -29,6 +29,7 @@ function Invoke-GitFeature {
    $currentBranch = $(git rev-parse --abbrev-ref HEAD)
    $newBranch = "$currentBranch.$args"
    git checkout -b $newBranch $currentBranch
+   git push --set-upstream origin $newBranch
 }
 New-Alias -Name feature -Value Invoke-GitFeature -Force -Option AllScope
 
