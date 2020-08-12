@@ -16,7 +16,7 @@ New-Alias -Name co -Value Invoke-GitCheckout -Force -Option AllScope
 function Invoke-GitAdd { & git add --interactive $args }
 New-Alias -Name add -Value Invoke-GitAdd -Force -Option AllScope
 
-function Invoke-GitCommit { & git commit -m $args[0] }
+function Invoke-GitCommit { & git commit -m "$args" }
 New-Alias -Name ci -Value Invoke-GitCommit -Force -Option AllScope
 
 function Invoke-GitPull { & git pull $args }
