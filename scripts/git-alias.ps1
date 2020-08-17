@@ -19,10 +19,7 @@ New-Alias -Name add -Value Invoke-GitAdd -Force -Option AllScope
 function Invoke-GitCommit { & git commit -m "$args" }
 New-Alias -Name ci -Value Invoke-GitCommit -Force -Option AllScope
 
-function Invoke-GitPull { 
-   $currentBranch = $(git rev-parse --abbrev-ref HEAD)
-   git pull origin $currentBranch   
-}
+function Invoke-GitPull { & git pull origin $currentBranch }
 New-Alias -Name pull -Value Invoke-GitPull -Force -Option AllScope
 
 function Invoke-GitFeature { 
@@ -33,10 +30,7 @@ function Invoke-GitFeature {
 }
 New-Alias -Name feature -Value Invoke-GitFeature -Force -Option AllScope
 
-function Invoke-GitPush { 
-   $currentBranch = $(git rev-parse --abbrev-ref HEAD)
-   git push origin $currentBranch
-}
+function Invoke-GitPush { & git push origin $currentBranch }
 New-Alias -Name push -Value Invoke-GitPush -Force -Option AllScope
 
 # Add-Alias rs 'git reset'
