@@ -13,7 +13,7 @@ New-Alias -Name branch -Value Invoke-GitBranch -Force -Option AllScope
 function Invoke-GitCheckout { & git checkout $args }
 New-Alias -Name co -Value Invoke-GitCheckout -Force -Option AllScope
 
-function Invoke-GitAdd { & git add --interactive $args }
+function Invoke-GitAdd { & git add $args } # --interactive
 New-Alias -Name add -Value Invoke-GitAdd -Force -Option AllScope
 
 function Invoke-GitCommit { & git commit -m "$args" }
