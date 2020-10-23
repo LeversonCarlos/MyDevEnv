@@ -33,6 +33,25 @@ New-Alias -Name feature -Value Invoke-GitFeature -Force -Option AllScope
 function Invoke-GitPush { & git push origin $currentBranch }
 New-Alias -Name push -Value Invoke-GitPush -Force -Option AllScope
 
+function Invoke-GitReleaseNotes { 
+   $sinceCommit = "";
+   if ($args) {
+      $sinceCommit = "$args^..HEAD"
+   }
+   git --no-pager log $sinceCommit `
+       --pretty=format:"%as (%h) - %s" -i -E `
+       --grep="^(Integrar desenvolvimento de|Merging|Merge|Mergear |Fechamento de versão|Rebase )" `
+       --invert-grep 
+   Write-Host ""
+   Write-Host ""
+   Write-Host "Usage example:" -ForegroundColor Blue   
+   Write-Host "> release-notes > fileName.txt" -ForegroundColor Blue
+   Write-Host "> release-notes xxx > fileName.txt" -ForegroundColor Blue
+   Write-Host "(where xxx could be a hash from the first commit to consider)" -ForegroundColor Blue
+   Write-Host ""
+}
+New-Alias -Name "release-notes" -Value Invoke-GitReleaseNotes -Force -Option AllScope
+
 # Add-Alias rs 'git reset'
 # Add-Alias rb 'git rebase'
 # Add-Alias fixup 'git fixup'
