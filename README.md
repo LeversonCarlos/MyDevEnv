@@ -198,8 +198,28 @@ E vamos ativá-lo editando o perfil com: `code $PROFILE` e adicionando a seguint
    ``` powershell
    Import-Module git-aliases -DisableNameChecking
    ```
-Após isso, os aliases do projeto ohmyzsh listados [aqui](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) estarão disponíveis para uso no powershel.
-
+Após isso, os aliases do projeto ohmyzsh listados [aqui](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) estarão disponíveis para uso no powershel. Destaco aqui alguns dos mais úteis:
+| | commando |
+|---|---|
+| g | git |
+| gb | git branch |
+| gbd | git branch -d |
+| gbD | git branch -D |
+| gco | git checkout |
+| gcm | git checkout $(git_main_branch) |
+| gcd | git checkout develop |
+| ga | git add |
+| gaa | git add --all |
+| gc | git commit |
+| gcmsg | git commit -m |
+| gl | git pull |
+| gp | git push |
+| gpsup | git push --set-upstream origin $(git_current_branch) |
+| gst | git status |
+| gss | git status -s |
+| gd | git diff |
+| glog | git log --oneline --decorate --graph |
+| grb | git rebase |
 
 ## Conclusão
 Seu terminal não precisa ser boring.
