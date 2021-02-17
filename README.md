@@ -203,13 +203,10 @@ Após isso, os aliases do projeto ohmyzsh listados [aqui](https://github.com/ohm
 |---|---|
 | g | git |
 | gb | git branch |
-| gbd | git branch -d |
-| gbD | git branch -D |
 | gco | git checkout |
 | gcm | git checkout $(git_main_branch) |
 | gcd | git checkout develop |
 | ga | git add |
-| gaa | git add --all |
 | gc | git commit |
 | gcmsg | git commit -m |
 | gl | git pull |
