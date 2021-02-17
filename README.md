@@ -188,5 +188,18 @@ Segue lista de aliases e comandos tratados:
 | push | git push origin `currentBranch` |
 
 
+## Aliases para Comandos Git baseados nos aliases do plugin para zsh
+No lugar de escrever e disponibilizar os aliases da forma descrita acima, uma alternativa seria utilizar os aliases já padronizados pelo pluging do [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh). 
+Para isso vamos instalar o módulo [powershell-git-aliases](https://github.com/gluons/powershell-git-aliases) com o seguinte comando:
+   ``` powershell
+   Install-Module git-aliases -Scope CurrentUser -AllowClobber
+   ```
+E vamos ativá-lo editando o perfil com: `code $PROFILE` e adicionando a seguinte linha:
+   ``` powershell
+   Import-Module git-aliases -DisableNameChecking
+   ```
+Após isso, os aliases do projeto ohmyzsh listados [aqui](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) estarão disponíveis para uso no powershel.
+
+
 ## Conclusão
 Seu terminal não precisa ser boring.
