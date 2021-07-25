@@ -74,6 +74,35 @@ Abaixo, alguns dos aliases que serão disponibilizados. A lista completa pode se
 | gts                  | git tag -s                                                                                                                       |
 
 
+## Oh-My-Posh
+O [Oh-My-Posh](https://ohmyposh.dev) é um engine de temas para o prompt, criado sob inspiração do [Oh-My-Zsh](https://ohmyz.sh).  
+
+Instalaremos o módulo com o comando:
+```ps1
+Install-Module oh-my-posh -Scope CurrentUser
+``` 
+
+E vamos ativá-lo, editando o perfil com: `code $PROFILE` e adicionar a seguinte linha:
+```ps1
+Import-Module oh-my-posh -DisableNameChecking
+```
+
+Uma série de [temas](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes) serão disponibilizados e podem ser consultados com o comando:  
+```ps1
+Get-PoshThemes
+```
+
+Para ativar o tema desejado (agnoster, no exemplo), edite o perfil com: `code $PROFILE` e adicione a seguinte linha:
+```ps1
+Set-PoshPrompt -Theme agnoster
+```
+
+Adicionalmente, poderíamos seguir a [documentação](https://ohmyposh.dev/docs/configure) e escrever um tema personalizado. Eu tomei o tema paradox como exemplo, fiz pequenos ajustes e disponibilizei [aqui](./themes/custom-paradox.omp.json). Para ativá-lo devemos mencionar o caminho completo, por exemplo:
+```ps1
+Set-PoshPrompt -Theme Set-PoshPrompt -Theme c:\powershell-settings\themes\custom-paradox.omp.json
+```
+
+
 ## Windows Terminal
 
 <img src="./images/windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
@@ -107,15 +136,6 @@ Abra as configurações do windows terminal com `ctrl`+`,` e adicione a seguinte
 ``` json
    "fontFace":  "Cascadia Code PL"
 ```
-
-## Oh-My-Posh
-Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever o seu prório *tema* para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversos desses temas, já prontos para uso. 
-
-### Instalação
-Instalaremos o módulo com o comando:
-``` powershell
-Install-Module oh-my-posh -Scope CurrentUser
-``` 
 
 ### Definir mensagem
 Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
