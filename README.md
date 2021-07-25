@@ -74,7 +74,6 @@ Abaixo, alguns dos aliases que serão disponibilizados. A lista completa pode se
 | gts                  | git tag -s                                                                                                                       |
 
 
-
 ## Windows Terminal
 
 <img src="./images/windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
@@ -93,6 +92,22 @@ A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox
 Copie a imagem disponibilizada [aqui](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
+## Nerd Fonts
+Vamos precisar de uma fonte que tenha suporte a *glyphos* e *ligaduras*. O portal [NerdFonts](https://www.nerdfonts.com) possui uma boa biblioteca de fontes com diversas opções. Eu costumo alternar entre essas: 
+- [FiraCode NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip)
+- [MesloLGSDZ NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip)  
+- [Cascadia Code PL](https://github.com/microsoft/cascadia-code)
+
+
+Basta fazer o download, abrir o pacote, clicar com o botão direito e selecionar *instalar*.  
+
+### Ativação
+
+Abra as configurações do windows terminal com `ctrl`+`,` e adicione a seguinte tag ao perfil desejado (ou na sessão `defaults` para refletir a todos os perfis):
+``` json
+   "fontFace":  "Cascadia Code PL"
+```
+
 ## Oh-My-Posh
 Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever o seu prório *tema* para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversos desses temas, já prontos para uso. 
 
@@ -102,42 +117,12 @@ Instalaremos o módulo com o comando:
 Install-Module oh-my-posh -Scope CurrentUser
 ``` 
 
-## Profile
-Sempre que abrir uma sessão do PowerShell, será preciso *ativar* os módulos que deseja usar, a saber o *posh-git* e/ou *oh-my-posh*. Para fazer essa ativação automaticamente, vamos editar o arquivo do seu perfil do Powershell e preencher com os comandos que desejamos executar sempre que iniciarmos uma sessão. 
-
-### Editar o Perfil
-Vamos abrir o arquivo do perfil com o comando:
-``` powershell
-code $PROFILE
-``` 
-E então, simplesmente adicione as seguintes linhas:
-``` powershell
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-Theme Paradox
-``` 
-Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. 
-
-### Ocultar o usuário
-Por padrão o usuário corrente será exibido como parte do prompt de comando. Para ocultá-lo precisamos preencher a variável que indica quem é o usuário padrão. Os temas verificam se o usuário corrente for o definido nessa variável e em caso afirmativo não o exibe. Vamos editar mais uma vez o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
-``` powershell
-$DefaultUser = '{substitua com o seu nome de usuário}'
-``` 
-
 ### Definir mensagem
 Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
 ``` powershell
 Clear-Host
 Write-Host "Olá... foco no código"
 ``` 
-
-## Fonte
-Os temas utilizados podem precisar de uma fonte que tenha suporte a *glyphos* e *ligaduras*. Uma boa sugestão é a [Cascadia Code](https://github.com/microsoft/cascadia-code) que é opensource e tem o suporte necessário à *[Powerline](# https://docs.microsoft.com/pt-br/windows/terminal/tutorials/powerline-setup)*.  
-Basta acessar a área de release do repositório e baixar a versão *Cascadia Code PL*. Adicionalmente estou disponibilizando [aqui](./fonts/CascadiaCodePL.ttf) a última versão que usei. Após baixar, clique na mesma com o botão direito e selecione *instalar*.  
-Na sequencia, abra as configurações do windows terminal com `ctrl`+`,` e adicione a seguinte tag ao perfil desejado:
-``` json
-   "fontFace":  "Cascadia Code PL"
-```
 
 ## Temas disponibilizados
 Os temas disponíveis podem ser consultados [aqui](https://github.com/JanDeDobbeleer/oh-my-posh#themes).
