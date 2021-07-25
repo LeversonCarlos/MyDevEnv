@@ -13,13 +13,6 @@
           "background": "#ffe9aa"
         },
         {
-          "type": "session",
-          "style": "powerline",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#100e23",
-          "background": "#ffffff"
-        },
-        {
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "\uE0B0",
