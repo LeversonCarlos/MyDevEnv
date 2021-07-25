@@ -6,6 +6,15 @@ Apenas um local para eu me lembrar como reconfigurar meu powershell do jeito que
 O Windows 10 já possui o Powershell 5.1 instalado por padrão e isso, via de regra, seria suficiente. Porém o powershell foi re-escrito como uma ferramenta opensource e multiplataforma, chamado agora de [Powershell Core](https://github.com/PowerShell/PowerShell). A forma mais fácil de instalá-lo é através da [Microsoft Store](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D), com isso as atualizações serão aplicadas automaticamente. 
 
 
+## Profile
+Sempre que uma instância do powershell é iniciada o script do perfil é executado. Então ali é o local para se colocar as definições que queremos sempre ativas.  
+O caminho completo para esse script pode ser obtido através da variável `$PROFILE`. Então, ao longo dos próximos passos vamos adicionar algum conteúdo a esse script.  
+Vamos começar com a definição do encoding. Quando começar a executar commits e visualizar logs, possivelmente encontrará comentários utilizando acentuações. Para que o terminal os exiba corretamente, abra o script para edição com o comando `code $PROFILE` e adicione as seguintes linhas:
+```ps1
+$env:LC_ALL='C.UTF-8'
+```
+
+
 ## Git
 Fazer o download e executar o pacote de instalação através do [site oficial](https://git-scm.com). Logo após, registrar o usuário e email que será associado aos commits com os seguintes comandos:
 ```ps1 
@@ -108,12 +117,6 @@ Import-Module oh-my-posh
 Set-Theme Paradox
 ``` 
 Salve o arquivo e pronto. Novas sessões já serão inicializadas com os módulos carregados e o tema *Paradox* ativado. 
-
-### Ajustar o Encoding
-Quando começar a executar comandos git e visualizar logs de commits, possivelmente encontrará comentários utilizando acentuações. Para que o terminal os exiba corretamente, vamos editar novamente o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
-``` powershell
-$env:LC_ALL='C.UTF-8'
-``` 
 
 ### Ocultar o usuário
 Por padrão o usuário corrente será exibido como parte do prompt de comando. Para ocultá-lo precisamos preencher a variável que indica quem é o usuário padrão. Os temas verificam se o usuário corrente for o definido nessa variável e em caso afirmativo não o exibe. Vamos editar mais uma vez o arquivo do perfil com: `code $PROFILE`, e acrescentar a seguinte linha:
