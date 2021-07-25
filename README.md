@@ -17,6 +17,55 @@ A instalação do [visual studio](https://visualstudio.microsoft.com/pt-br) já 
 O processo deverá acontecer automaticamente ao fazer o primeiro `git push`, solicitando autenticação através do navegador.
 
 
+## Git Aliases
+Esse módulo vai prover aliases para comandos Git baseados no pluging [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git).  
+Rode o seguinte comando para instalar o módulo no powershell: 
+```ps1
+Install-Module -Name git-aliases
+```
+Para ativar o módulo, editar seu perfil com: `code $PROFILE` e adicionar a seguinte linha:
+```ps1
+Import-Module git-aliases -DisableNameChecking
+```
+Posteriormente, para atualizar o módulo quando houver atualizações, rode o comando:
+```ps1
+Update-Module git-aliases
+```
+### Aliases
+Abaixo, alguns dos aliases que serão disponibilizados. A lista completa pode ser consultada no [repositório do plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git).
+| Alias                | Command                                                                                                                          |
+|:---------------------|:---------------------------------------------------------------------------------------------------------------------------------|
+| g                    | git                                                                                                                              |
+| ga                   | git add                                                                                                                          |
+| gb                   | git branch                                                                                                                       |
+| gbl                  | git blame -b -w                                                                                                                  |
+| gc                   | git commit -v                                                                                                                    |
+| gcmsg                | git commit -m                                                                                                                    |
+| gco                  | git checkout                                                                                                                     |
+| gcm                  | git checkout $(git_main_branch)                                                                                                                |
+| gcd                  | git checkout develop                                                                                                             |
+| gd                   | git diff                                                                                                                         |
+| gdw                  | git diff --word-diff                                                                                                             |
+| gf                   | git fetch                                                                                                                        |
+| gfa                  | git fetch --all --prune                                                                                                          |
+| gfo                  | git fetch origin                                                                                                                 |
+| gl                   | git pull                                                                                                                         |
+| ggl                  | git pull origin $(current_branch)                                                                                                |
+| gp                   | git push                                                                                                                         |
+| ggp                  | git push origin $(current_branch)                                                                                                |
+| gpsup                | git push --set-upstream origin $(git_current_branch)                                                                             |
+| glg                  | git log --stat                                                                                                                   |
+| glo                  | git log --oneline --decorate                                                                                                     |
+| glog                 | git log --oneline --decorate --graph                                                                                             |
+| gloga                | git log --oneline --decorate --graph --all                                                                                       |
+| gm                   | git merge                                                                                                                        |
+| grb                  | git rebase                                                                                                                       |
+| gss                  | git status -s                                                                                                                    |
+| gst                  | git status                                                                                                                       |
+| gts                  | git tag -s                                                                                                                       |
+
+
+
 ## Windows Terminal
 
 <img src="./images/windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
@@ -169,31 +218,6 @@ Set-Theme C:\Sources\Personal\powershell-settings\themes\Elesse.psm1
 Opcionalmente, seria possível disponibilizar esse tema na pasta de temas do *oh-my-posh* que normalmente se encontra em: `C:\Users\{seu nome de usuario}\Documents\PowerShell\Modules\oh-my-posh`
 
 
-## Aliases para Comandos Git
-Podemos criar aliases para comandos através do comando `New-Alias -Name {alias desejado} -Value {commando ou função a ser executada}`. Com isso em mente, elaborei um script que cria funções e aliases para alguns dos principais comandos *Git* que mais uso, e da forma como costumo usar.  
-
-### Ativação
-Para executar esse script, editar o perfil com: `code $PROFILE` e mencionar o caminho completo onde o gravou, como:
-``` powershell
-."C:\Sources\Personal\powershell-settings\scripts\git-alias.ps1"
-```
-
-### Comandos tratados
-Segue lista de aliases e comandos tratados:  
-| | comandos básicos |
-|---|---|
-| st | git status *-sb* |
-| log | git log *--graph --oneline --max-count=20* |
-| dif | git diff *--word-diff* |
-| branch | git branch `args` |
-| co | git checkout `args` |
-| add | git add *--interactive* |
-| ci | git commit -m "`args`" |
-| feature | git checkout -b `currentBranch.args` `currentBranch` |
-| pull | git pull origin `currentBranch` |
-| push | git push origin `currentBranch` |
-
-
 ## Aliases para Comandos Git baseados nos aliases do plugin para zsh
 No lugar de escrever e disponibilizar os aliases da forma descrita acima, uma alternativa seria utilizar os aliases já padronizados pelo pluging do [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh). 
 Para isso vamos instalar o módulo [powershell-git-aliases](https://github.com/gluons/powershell-git-aliases) com o seguinte comando:
@@ -204,25 +228,6 @@ E vamos ativá-lo editando o perfil com: `code $PROFILE` e adicionando a seguint
    ``` powershell
    Import-Module git-aliases -DisableNameChecking
    ```
-Após isso, os aliases do projeto ohmyzsh listados [aqui](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) estarão disponíveis para uso no powershel. Destaco aqui alguns dos mais úteis:
-| | commando |
-|---|---|
-| g | git |
-| gb | git branch |
-| gco | git checkout |
-| gcm | git checkout $(git_main_branch) |
-| gcd | git checkout develop |
-| ga | git add |
-| gc | git commit |
-| gcmsg | git commit -m |
-| gl | git pull |
-| gp | git push |
-| gpsup | git push --set-upstream origin $(git_current_branch) |
-| gst | git status |
-| gss | git status -s |
-| gd | git diff |
-| glog | git log --oneline --decorate --graph |
-| grb | git rebase |
 
 ## Conclusão
 Seu terminal não precisa ser boring.
