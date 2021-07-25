@@ -84,33 +84,6 @@ A imagem a ser usada para o fundo precisa ser disponibilizada dentro do *sandbox
 Copie a imagem disponibilizada [aqui](./backgrounds/Matrix1920.gif) (ou a sua imagem de preferência), para a seguinte pasta: `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState`.   
 
 
-## Posh-Git
-O [posh-git](https://github.com/dahlbyk/posh-git) é um módulo do PowerShell que integra o *Git* ao Powershell provendo informações de status e contexto do Git que pode ser exibido diretamente no prompt de comando. Além de disponibilizar autocomplete para os comandos Git, nomes de branch, e muito mais.  
-
-### Instalação 
-Para instalar o módulo execute o seguinte comando:
-``` powershell
-Install-Module posh-git -Scope CurrentUser
-```
-Pode ser necessário autorizar pacotes vindos da *Galeria do Powershell*. Responda sim para que a instalação prossiga.  
-Se voce receber um erro de *Install-Module* sobre o NuGet precisando interagir com *Repositório NuGet*, execute os comandos a seguir para inicializar o provedor de Nuget:
-``` powershell
-Install-PackageProvider NuGet -Force
-Import-PackageProvider NuGet -Force
-```
-
-### Atualizações
-Depois de instalado, você poderá sempre atualizar o módulo através do comando: 
-``` powershell
-Update-Module posh-git
-``` 
-
-### PSReadline
-Se você estiver utilizando o Powershell Core, será preciso instalar o módulo [PSReadline](https://docs.microsoft.com/en-us/powershell/module/psreadline/?view=powershell-6&WT.mc_id=-blog-scottha) para poder customizar o ambiente do prompt de commando no Powershell. Isso pode ser feito através do comando:
-``` powershell
-Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-``` 
-
 ## Oh-My-Posh
 Até aqui já seria possível usufruir das funcionalidades que o posh-git traz e até mesmo escrever o seu prório *tema* para o prompt de comando seguindo a documentação. Mas para facilitar um pouco mais, vamos instalar o módulo [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) que, basicamente, disponibiliza deversos desses temas, já prontos para uso. 
 
