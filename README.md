@@ -1,5 +1,5 @@
 # Introdução
-Apenas um local para eu me lembrar como reconfigurar meu powershell do jeito que gosto e preciso. 
+Apenas um local para eu me lembrar como reconfigurar meu windows terminal do jeito que gosto e preciso. 
 
 # Powershell Core
 O Windows 10 já possui o Powershell 5.1 instalado por padrão e isso, via de regra, seria suficiente. Porém o powershell foi re-escrito como uma ferramenta opensource e multiplataforma, chamado agora de [Powershell Core](https://github.com/PowerShell/PowerShell). A forma mais fácil de instalá-lo é através da [Microsoft Store](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D), com isso as atualizações serão aplicadas automaticamente. 
@@ -98,7 +98,7 @@ Set-PoshPrompt -Theme agnoster
 
 Adicionalmente, poderíamos seguir a [documentação](https://ohmyposh.dev/docs/configure) e escrever um tema personalizado. Eu tomei o tema paradox como exemplo, fiz pequenos ajustes e disponibilizei [aqui](./themes/custom-paradox.omp.json). Para ativá-lo devemos mencionar o caminho completo, por exemplo:
 ```ps1
-Set-PoshPrompt -Theme Set-PoshPrompt -Theme c:\powershell-settings\themes\custom-paradox.omp.json
+Set-PoshPrompt -Theme Set-PoshPrompt -Theme c:\MyWindowsTerminal\themes\custom-paradox.omp.json
 ```
 
 
