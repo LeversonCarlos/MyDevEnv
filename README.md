@@ -102,6 +102,21 @@ Set-PoshPrompt -Theme Set-PoshPrompt -Theme c:\powershell-settings\themes\custom
 ```
 
 
+# Mensagem de apresentação
+Novas instâncias do powershell são apresentadas com as boas vindas do powershell. Prefiro limpar a tela e apresentar algumas instruções que podem ser mais úteis como no exemplo abaixo. Para isso, editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
+```ps1
+cd \Sources
+Clear-Host
+Write-Host 'PowerShell:'
+Write-Host ' => '($PSVersionTable.PSVersion.Major,$PSVersionTable.PSVersion.Minor,$PSVersionTable.PSVersion.Patch -join ".")
+Write-Host 'Profile:'
+Write-Host ' => code $PROFILE'
+Write-Host "Themes:"
+Write-Host ' => Get-PoshThemes'
+Write-Host ''
+``` 
+
+
 # Windows Terminal
 
 <img src="./images/windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
@@ -132,10 +147,3 @@ Para ativar, abra as configurações do windows terminal com `ctrl`+`,` e adicio
 ``` json
    "fontFace":  "Cascadia Code PL"
 ```
-
-# Definir mensagem
-Por fim, para sempre começar com uma tela limpa vamos editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
-``` powershell
-Clear-Host
-Write-Host "Olá... foco no código"
-``` 
