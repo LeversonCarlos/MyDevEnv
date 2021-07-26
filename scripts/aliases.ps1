@@ -17,14 +17,3 @@ function Invoke-GitReleaseNotes {
 }
 New-Alias -Name "release-notes" -Value Invoke-GitReleaseNotes -Force -Option AllScope
 
-
-function Invoke-CdTracking {
-   cd \sources\OransysTracking
-}
-New-Alias -Name "cdt" -Value Invoke-CdTracking -Force -Option AllScope
-
-
-function Invoke-CdWarehouse {
-   cd \sources\OransysSuite\suite
-}
-New-Alias -Name "cdw" -Value Invoke-CdWarehouse -Force -Option AllScope
