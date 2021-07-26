@@ -171,7 +171,7 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   - Será criado usuário com senha
   - Será criado perfil no windows terminal
 
-## ZSH
+## Zsh
 - Abrir sua sessão do ubuntu pelo windows terminal
 - Atualizar lista de pacotes e instalar o shell zsh com os comandos:
   ```bash
@@ -183,6 +183,18 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   chsh -s $(which zsh)
   ```  
 - Fechar a sessão e reabrir, selecionando a opção `2` para popular os arquivos de configuração com valores padrão
+
+## Oh-My-Zsh
+- Instalar o plugin com o comando:
+  ```bash
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
+- Defir o [tema desejado](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) editando o arquivo de configurações do zsh com:
+  ```bash
+  nano ~/.zshrc
+  ```  
+- Substituir `ZSH_THEME="robbyrussell"` por (por exemplo) `ZSH_THEME="agnoster"`
+- Sair gravando as mudanças com `ctrl`+`x`
 
 ## Diretório Inicial
 - Mover para a pasta raiz com:
