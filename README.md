@@ -145,5 +145,29 @@ Basta fazer o download, abrir o pacote, clicar com o botão direito e selecionar
 
 Para ativar, abra as configurações do windows terminal com `ctrl`+`,` e adicione a seguinte tag ao perfil desejado (ou na sessão `defaults` para refletir a todos os perfis):
 ``` json
-   "fontFace":  "Cascadia Code PL"
+   "fontFace":  "FiraCode NF"
 ```
+
+
+# Linux no Windows
+
+## Ativação
+Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](https://docs.microsoft.com/pt-br/windows/wsl/install-win10), mas basicamente iremos:
+- Usando o menu iniciar, pesquisar por `ativar ou desativar recursos do windows`
+- Marcar as opções `plataforma de máquina virtual` e `subsistema do windows para linux`
+- Após instalação desses recursos, atualizar o wsl1 para wsl2 com [esse pacote de atualização](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi), ou [consultar a 4a etapa](https://docs.microsoft.com/pt-br/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package) do tutorial para outras opções.
+- Definir a versão padrão do wsl para o wsl2 com o seguinte comando: 
+  ```ps1
+  wsl --set-default-version 2
+  ```
+- Será possível conferir a versão corrente com o seguinte comando:
+  ```ps1
+  Get-ItemPropertyValue `
+     -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss `
+     -Name DefaultVersion
+  ``` 
+- Instalar [uma das distribuição linux](https://aka.ms/wslstore) através da loja. Os próximos passos levarão em conta o Ubuntu
+- Utilizando o menu iniciar, executar a primeira vez a distribuição instalada para concluir o processo
+  - Será criado usuário com senha
+  - Será criado perfil no windows terminal
+
