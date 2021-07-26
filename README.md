@@ -194,6 +194,10 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   nano ~/.zshrc
   ```  
 - Substituir `ZSH_THEME="robbyrussell"` por (por exemplo) `ZSH_THEME="agnoster"`
+- Para não apresentar o segmento usuario@hostName no prompt, defina o usuário corrente como _usuário padrão_ acrescentando a seguinte linha ao final do arquivo:
+  ```bash
+  DEFAULT_USER=$USER
+  ```
 - Sair gravando as mudanças com `ctrl`+`x`
 
 ## Diretório Inicial
@@ -218,3 +222,4 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   cd /sources
   ```  
 - Sair gravando as mudanças com `ctrl`+`x`
+
