@@ -151,7 +151,7 @@ Para ativar, abra as configurações do windows terminal com `ctrl`+`,` e adicio
 
 # Linux no Windows
 
-## Ativação
+## Ativar o Linux
 Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](https://docs.microsoft.com/pt-br/windows/wsl/install-win10), mas basicamente iremos:
 - Usando o menu iniciar, pesquisar por `ativar ou desativar recursos do windows`
 - Marcar as opções `plataforma de máquina virtual` e `subsistema do windows para linux`
@@ -171,3 +171,15 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   - Será criado usuário com senha
   - Será criado perfil no windows terminal
 
+## ZSH
+- Abrir sua sessão do ubuntu pelo windows terminal
+- Atualizar lista de pacotes e instalar o shell zsh com os comandos:
+  ```bash
+  sudo apt update
+  sudo apt install zsh
+  ```
+- Definir o zsh como o shell padrão com:
+  ```bash
+  chsh -s $(which zsh)
+  ```  
+- Fechar a sessão e reabrir, selecionando a opção `2` para popular os arquivos de configuração com valores padrão
