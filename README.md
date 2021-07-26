@@ -223,3 +223,15 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   ```  
 - Sair gravando as mudanças com `ctrl`+`x`
 
+## Mensagem de apresentação
+- Editar o arquivo de configurações do zsh com:
+  ```bash
+  nano ~/.zshrc
+  ```  
+- Mover até o final do arquivo e acrescentar as seguintes linhas (ou algo mais pertinente):  
+  ```bash
+  echo 'Profile:'
+  echo ' => nano ~/.zshrc'
+  echo ''
+  ```  
+- Sair gravando as mudanças com `ctrl`+`x`
