@@ -183,3 +183,26 @@ Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](h
   chsh -s $(which zsh)
   ```  
 - Fechar a sessão e reabrir, selecionando a opção `2` para popular os arquivos de configuração com valores padrão
+
+## Diretório Inicial
+- Mover para a pasta raiz com:
+  ```bash
+  cd /
+  ```
+- Criar diretório `sources` (ou o que preferir) com:
+  ```bash
+  sudo mkdir sources
+  ```  
+- Modificar o proprietário do diretório `sources` para seu usuário (lcjohnny no meu caso) com:
+  ```bash
+  sudo chown lcjohnny /sources
+  ```  
+- Editar o arquivo de configurações do zsh com:
+  ```bash
+  nano ~/.zshrc
+  ```  
+- Mover até o final do arquivo e acrescentar a linha:  
+  ```bash
+  cd /sources
+  ```  
+- Sair gravando as mudanças com `ctrl`+`x`
