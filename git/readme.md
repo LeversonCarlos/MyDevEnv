@@ -3,6 +3,7 @@
 - [Instalação](#instalação)
 - [Registro de Usuário](#registro-de-usuário)
 - [Credential Manager](#credential-manager)
+  - [Azure DevOps Artifacts](#azure-devops-artifacts)
 - [Aliases](#aliases)
   - [Lista de Aliases](#lista-de-aliases)
   - [Aliases Auxiliares](#aliases-auxiliares)
@@ -20,6 +21,19 @@ git config --global user.email "seuEmail@seuProvedor.com"
 ## Credential Manager
 A instalação do [visual studio](https://visualstudio.microsoft.com/pt-br) já fará a instalação do [Git Credential Manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) que será responsável pela autenticação nos repositórios.  
 A solicitação de autenticação através do navegador ocorrerá automaticamente ao fazer o primeiro `git push`.
+
+
+### Azure DevOps Artifacts
+Para projetos que utilizam referência de bibliotecas hospedadas no Azure DevOps, precisamos do [provider de credenciais do Azure Artifacts](https://github.com/Microsoft/artifacts-credprovider).
+- Instale o provider com o comando:
+  ```ps1
+  iex "& { $(irm https://aka.ms/install-artifacts-credprovider.ps1) } -AddNetfx"
+  ```
+- Faça o primeiro _restore_ de forma interativa através do navegador com o comando:
+  ```ps1
+  dotnet restore --interactive 
+  ```
+
 
 ## Aliases
 O módulo de powershell [GitAliases](https://github.com/gluons/powershell-git-aliases) vai prover aliases para comandos git baseados no pluging [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git).  
