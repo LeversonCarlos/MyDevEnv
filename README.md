@@ -13,65 +13,8 @@ Vamos começar com a definição do encoding. Quando começar a executar commits
 $env:LC_ALL='C.UTF-8'
 ```
 
-
-# Git
-Fazer o download e executar o pacote de instalação através do [site oficial](https://git-scm.com). Logo após, registrar o usuário e email que será associado aos commits com os seguintes comandos:
-```ps1 
-git config --global user.name "Seu Nome"
-git config --global user.email "seuEmail@seuProvedor.com"
-```
-## Git Credential Manager
-A instalação do [visual studio](https://visualstudio.microsoft.com/pt-br) já fará a instalação do [Git Credential Manager](https://github.com/Microsoft/Git-Credential-Manager-for-Windows) que será responsável pela autenticação nos repositórios.  
-O processo deverá acontecer automaticamente ao fazer o primeiro `git push`, solicitando autenticação através do navegador.
-
-
-# Git Aliases
-Esse módulo vai prover aliases para comandos Git baseados no pluging [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git).  
-Rode o seguinte comando para instalar o módulo no powershell: 
-```ps1
-Install-Module -Name git-aliases
-```
-Para ativar o módulo, editar seu perfil com: `code $PROFILE` e adicionar a seguinte linha:
-```ps1
-Import-Module git-aliases -DisableNameChecking
-```
-Posteriormente, para atualizar o módulo quando houver atualizações, rode o comando:
-```ps1
-Update-Module git-aliases
-```
-## Aliases
-Abaixo, alguns dos aliases que serão disponibilizados. A lista completa pode ser consultada no [repositório do plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git).
-| Alias                | Command                                                                                                                          |
-|:---------------------|:---------------------------------------------------------------------------------------------------------------------------------|
-| g                    | git                                                                                                                              |
-| ga                   | git add                                                                                                                          |
-| gb                   | git branch                                                                                                                       |
-| gbl                  | git blame -b -w                                                                                                                  |
-| gc                   | git commit -v                                                                                                                    |
-| gcmsg                | git commit -m                                                                                                                    |
-| gco                  | git checkout                                                                                                                     |
-| gcm                  | git checkout $(git_main_branch)                                                                                                                |
-| gcd                  | git checkout develop                                                                                                             |
-| gd                   | git diff                                                                                                                         |
-| gdw                  | git diff --word-diff                                                                                                             |
-| gf                   | git fetch                                                                                                                        |
-| gfa                  | git fetch --all --prune                                                                                                          |
-| gfo                  | git fetch origin                                                                                                                 |
-| gl                   | git pull                                                                                                                         |
-| ggl                  | git pull origin $(current_branch)                                                                                                |
-| gp                   | git push                                                                                                                         |
-| ggp                  | git push origin $(current_branch)                                                                                                |
-| gpsup                | git push --set-upstream origin $(git_current_branch)                                                                             |
-| glg                  | git log --stat                                                                                                                   |
-| glo                  | git log --oneline --decorate                                                                                                     |
-| glog                 | git log --oneline --decorate --graph                                                                                             |
-| gloga                | git log --oneline --decorate --graph --all                                                                                       |
-| gm                   | git merge                                                                                                                        |
-| grb                  | git rebase                                                                                                                       |
-| gss                  | git status -s                                                                                                                    |
-| gst                  | git status                                                                                                                       |
-| gts                  | git tag -s                                                                                                                       |
-
+# GIT 
+- [Git](./git/readme.md)
 
 # Oh-My-Posh
 O [Oh-My-Posh](https://ohmyposh.dev) é um engine de temas para o prompt, criado sob inspiração do [Oh-My-Zsh](https://ohmyz.sh).  
