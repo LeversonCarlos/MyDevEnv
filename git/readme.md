@@ -5,6 +5,7 @@
 - [Credential Manager](#credential-manager)
 - [Aliases](#aliases)
   - [Lista de Aliases](#lista-de-aliases)
+  - [Aliases Auxiliares](#aliases-auxiliares)
 
 ## Instalação
 Fazer o download e executar o pacote de instalação através do [site oficial](https://git-scm.com).  
@@ -68,3 +69,17 @@ Abaixo, alguns dos aliases que serão disponibilizados. A lista completa pode se
 | gst                  | git status                                                                                                                       |
 | gts                  | git tag -s                                                                                                                       |
 
+### Aliases auxiliares
+Adicionalmente podemos escrever funções complexas e disponibilizar aliases para tal.  
+No [arquivo auxiliar](./aliases.ps1) disponibilizo exemplo de um aliaes para compor um _release-notes_ baseado na descrição dos commits.  
+Para ativar aliases em arquivos externos como esse, editar seu perfil com: `code $PROFILE` e adicionar linha como essa:
+```ps1
+."c:\Sources\Personal\MyWindowsTerminal\git\aliases.ps1"
+```
+Seguindo essa mesma premissa, podemos criar funções de aliases para qualquer tarefa comum, diretamente em seu arquivo de perfil (_$PROFILE_). Exemplo esse aliases para mudança de pasta:
+```ps1
+function Invoke-CdWarehouse {
+   cd \sources\OransysWarehouse\suite
+}
+New-Alias -Name "cdw" -Value Invoke-CdWarehouse -Force -Option AllScope
+```
