@@ -3,50 +3,7 @@ Apenas um local para eu me lembrar como reconfigurar meu windows terminal do jei
 
 - [Powershell](./powershell/readme.md)
 - [Git](./git/readme.md)
-
-# Oh-My-Posh
-O [Oh-My-Posh](https://ohmyposh.dev) é um engine de temas para o prompt, criado sob inspiração do [Oh-My-Zsh](https://ohmyz.sh).  
-
-Instalaremos o módulo com o comando:
-```ps1
-Install-Module oh-my-posh -Scope CurrentUser
-``` 
-
-E vamos ativá-lo, editando o perfil com: `code $PROFILE` e adicionar a seguinte linha:
-```ps1
-Import-Module oh-my-posh -DisableNameChecking
-```
-
-Uma série de [temas](https://github.com/JanDeDobbeleer/oh-my-posh/tree/main/themes) serão disponibilizados e podem ser consultados com o comando:  
-```ps1
-Get-PoshThemes
-```
-
-Para ativar o tema desejado (agnoster, no exemplo), edite o perfil com: `code $PROFILE` e adicione a seguinte linha:
-```ps1
-Set-PoshPrompt -Theme agnoster
-```
-
-Adicionalmente, poderíamos seguir a [documentação](https://ohmyposh.dev/docs/configure) e escrever um tema personalizado. Eu tomei o tema paradox como exemplo, fiz pequenos ajustes e disponibilizei [aqui](./themes/custom-paradox.omp.json). Para ativá-lo devemos mencionar o caminho completo, por exemplo:
-```ps1
-Set-PoshPrompt -Theme Set-PoshPrompt -Theme c:\MyWindowsTerminal\themes\custom-paradox.omp.json
-```
-
-
-# Mensagem de apresentação
-Novas instâncias do powershell são apresentadas com as boas vindas do powershell. Prefiro limpar a tela e apresentar algumas instruções que podem ser mais úteis como no exemplo abaixo. Para isso, editar o perfil com: `code $PROFILE`, e acrescentar as seguintes linhas:
-```ps1
-cd \Sources
-Clear-Host
-Write-Host 'PowerShell:'
-Write-Host ' => '($PSVersionTable.PSVersion.Major,$PSVersionTable.PSVersion.Minor,$PSVersionTable.PSVersion.Patch -join ".")
-Write-Host 'Profile:'
-Write-Host ' => code $PROFILE'
-Write-Host "Themes:"
-Write-Host ' => Get-PoshThemes'
-Write-Host ''
-``` 
-
+- [Temas](./themes/readme.md)
 
 # Windows Terminal
 
