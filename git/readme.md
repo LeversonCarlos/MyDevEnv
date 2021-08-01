@@ -4,6 +4,7 @@
 - [Registro de Usuário](#registro-de-usuário)
 - [Credential Manager](#credential-manager)
   - [Azure DevOps Artifacts](#azure-devops-artifacts)
+  - [WSL](#wsl)
 - [Aliases](#aliases)
   - [Lista de Aliases](#lista-de-aliases)
   - [Aliases Auxiliares](#aliases-auxiliares)
@@ -33,6 +34,14 @@ Para projetos que utilizam referência de bibliotecas hospedadas no Azure DevOps
   ```ps1
   dotnet restore --interactive 
   ```
+
+### WSL
+Como descrito no [tutorial oficial](https://docs.microsoft.com/pt-br/windows/wsl/tutorials/wsl-git), para que o ambiente linux utilize as credenciais armazenadas no ambiente windows (_e funcione inclusive auth 2fa_), precisamos direcionar o provedor de credenciais do wsl para o *credential provider* instalado acima.  
+Considerando que o credential provider esteja instalado no drive C e na pasta padrão, fazemos esse direcionamento rodando o seguinte comando no wsl:
+```bash
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+```
+Após isso, será possível clonar repositorio e não deverá pedir autenticação pois estará usando credenciais previamente fornecidas no ambinete windows.
 
 
 ## Aliases
