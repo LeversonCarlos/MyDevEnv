@@ -6,7 +6,7 @@
 
 
 ## Apresentação
-<img src="./windows-terminal.gif" title="Windows Terminal" width="280" align="right" /> 
+<img src="./windows-terminal.png" title="Windows Terminal" width="280" align="right" /> 
 O Windows Terminal é uma especie de IDE agregadora de terminais. Com ele é possível abrir múltiplas abas de terminais distintos como o *Command Prompt* e o próprio *Powershell*, além dos ambientes linux com o *WSL*. Instale o Windows Terminal através desse [link](https://www.microsoft.com/store/productId/9N0DX20HK701) da Windows Store.  
 
 ## Fonte
