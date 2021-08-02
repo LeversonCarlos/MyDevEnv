@@ -114,3 +114,14 @@ O [dotnet](https://dotnet.microsoft.com) é multi-plataforma. A forma mais fáci
   sudo apt-get update && \
   sudo apt-get install -y dotnet-sdk-5.0
   ```
+
+## Node
+Vamos usar o [NVM](https://github.com/nvm-sh/nvm) (_Node Version Manager_) para instalar o node e o manter atualizado. Segundo [documentação oficial](https://github.com/nvm-sh/nvm#installing-and-updating), basta:
+- Instalar o nvm com o comando:
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
+  ```
+- E solicitar instalação da versão lts do node com:
+  ```bash
+  nvm install --lts
+  ```
