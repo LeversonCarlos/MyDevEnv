@@ -98,3 +98,19 @@ _Os próximos passos levarão em conta o uso da distribuição ubuntu_
   echo ''
   ```  
 - Sair gravando as mudanças com `ctrl`+`x`
+
+## DotNet
+O [dotnet](https://dotnet.microsoft.com) é multi-plataforma. A forma mais fácil de instalá-lo e manter atualizado no ubuntu é através de seu repositório conforme descrito no [tutorial oficial](https://docs.microsoft.com/pt-br/dotnet/core/install/linux-ubuntu).
+- Fazer o download e instalar o repositório do Ububtu 20.04 com os seguintes comandos:
+  ```bash
+  wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+  sudo dpkg -i packages-microsoft-prod.deb
+  rm packages-microsoft-prod.deb
+  ```
+- E então instalar os pacotes necessários via apt-get normalmente:
+  ```bash
+  sudo apt-get update; \
+  sudo apt-get install -y apt-transport-https && \
+  sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-5.0
+  ```
