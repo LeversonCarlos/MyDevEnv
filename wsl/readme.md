@@ -7,6 +7,9 @@
 - [Oh-My-Zsh](#oh-my-zsh)
 - [Diretório Inicial](#diretório-inicial)
 - [Mensagem de apresentação](#mensagem-de-apresentação)
+- [DotNet](#dotnet)
+- [Node](#node)
+- [Git](#git)
 
 ## Ativação
 Para ativar o subsistema linux para windows, basta seguir o [tutorial oficial](https://docs.microsoft.com/pt-br/windows/wsl/install-win10), mas basicamente iremos:
@@ -125,3 +128,6 @@ Vamos usar o [NVM](https://github.com/nvm-sh/nvm) (_Node Version Manager_) para 
   ```bash
   nvm install --lts
   ```
+
+## Git
+O git já vem instalado na distribuição ubuntu. Será preciso apenas [registrar o usuário](../git/readme.md#registro-de-usuário) e direcionar o provedor de credenciais para que use o provedor instalado no windows, conforme descrito [aqui](../git/readme.md#wsl).
