@@ -130,4 +130,12 @@ Vamos usar o [NVM](https://github.com/nvm-sh/nvm) (_Node Version Manager_) para 
   ```
 
 ## Git
-O git já vem instalado na distribuição ubuntu. Será preciso apenas [registrar o usuário](../git/readme.md#registro-de-usuário) e direcionar o provedor de credenciais para que use o provedor instalado no windows, conforme descrito [aqui](../git/readme.md#wsl).
+O git já vem instalado na distribuição ubuntu, será preciso apenas:
+- [Registrar o usuário](../git/readme.md#registro-de-usuário) 
+- Direcionar o provedor de credenciais para que use o provedor instalado no windows, conforme descrito [aqui](../git/readme.md#wsl)
+### GitBranch sem Paginação
+O comando `git branch` passou a exibir o resultado numa instancia do vi permitindo paginação.  
+Para não ter esse comportamento e apresentar o resultado numa listagem como o `ls` faz, executar o comando:
+```bash
+git config --global pager.branch false
+```
